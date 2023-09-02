@@ -29,8 +29,11 @@
     <div class="container-fluid  pt-5" style="background-color: rgb(239, 233, 209);">
         <div class="row mt-5" >
             <div class="col-md-4 col-sm-6 my-3 text-center" >
-                <img src="img/1.jpg" class="img-fluid img-thumbnail rounded-3 border border-2 border-danger object-fit-cover visually-hidden" alt=""
-                style="height: 280px; width: 300px;">
+                <figure class="figure">
+                    <img src="img/1.jpg" class="figure-img img-fluid img-thumbnail rounded-3 border border-2 border-danger object-fit-cover visually-hidden" alt=""
+                    style="height: 280px; width: 300px;">
+                    <figcaption class="figure-caption">My Lola 1</figcaption>
+                </figure>    
                 <div class="div_spinner text-center d-flex justify-content-center w-100" style="height: 300px; float: left;">
                     <div class="spinner-border align-self-center" role="status">
                         <!-- <span class="visually-hidden ">Loading...</span> -->
@@ -38,8 +41,11 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 my-3 text-center">
-                <img src="img/2.jpg" class="img-fluid img-thumbnail rounded-3 border border-2 border-danger object-fit-cover visually-hidden" alt=""
-                style="height: 280px; width: 300px;">
+                <figure class="figure">
+                    <img src="img/2.jpg" class="figure-img img-fluid img-thumbnail rounded-3 border border-2 border-danger object-fit-cover visually-hidden" alt=""
+                    style="height: 280px; width: 300px;">
+                    <figcaption class="figure-caption">My Lola 2</figcaption>
+                </figure>
                 <div class="div_spinner text-center d-flex justify-content-center w-100" style="height: 300px; float: left;">
                     <div class="spinner-border align-self-center" role="status">
                         <!-- <span class="visually-hidden ">Loading...</span> -->
@@ -47,8 +53,11 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 my-3 text-center">
-                <img src="img/3.jpg" class="img-fluid img-thumbnail rounded-3 border border-2 border-danger object-fit-cover visually-hidden " alt=""
-                style="height: 280px; width: 300px;">
+                <figure class="figure">
+                    <img src="img/3.jpg" class="figure-img img-fluid img-thumbnail rounded-3 border border-2 border-danger object-fit-cover visually-hidden " alt=""
+                    style="height: 280px; width: 300px;">
+                    <figcaption class="figure-caption">My Lola 3</figcaption>
+                </figure>    
                 <div class="div_spinner text-center d-flex justify-content-center w-100" style="height: 300px; float: left;">
                     <div class="spinner-border align-self-center" role="status">
                         <!-- <span class="visually-hidden ">Loading...</span> -->
@@ -56,8 +65,11 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 my-3 text-center" >
-                <img src="img/4.jpg" class="img-fluid img-thumbnail rounded-3 border border-2 border-danger object-fit-cover visually-hidden" alt=""
-                style="height: 280px; width: 300px;">
+                <figure class="figure">
+                    <img src="img/4.jpg" class="figure-img img-fluid img-thumbnail rounded-3 border border-2 border-danger object-fit-cover visually-hidden" alt=""
+                    style="height: 280px; width: 300px;">
+                    <figcaption class="figure-caption">My Lola 4</figcaption>
+                </figure>
                 <div class="div_spinner text-center d-flex justify-content-center w-100" style="height: 300px; float: left;">
                     <div class="spinner-border align-self-center" role="status">
                         <!-- <span class="visually-hidden ">Loading...</span> -->
@@ -65,8 +77,11 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 my-3 text-center">
-                <img src="img/5.jpg" class="img-fluid img-thumbnail rounded-3 border border-2 border-danger object-fit-cover visually-hidden" alt="" 
-                style="height: 280px; width: 300px;">
+                <figure class="figure">
+                    <img src="img/5.jpg" class="figure-img img-fluid img-thumbnail rounded-3 border border-2 border-danger object-fit-cover visually-hidden" alt="" 
+                    style="height: 280px; width: 300px;">
+                    <figcaption class="figure-caption">My Lola 5</figcaption>
+                </figure>    
                 <div class="div_spinner text-center d-flex justify-content-center w-100" style="height: 300px; float: left;">
                     <div class="spinner-border align-self-center" role="status">
                         <!-- <span class="visually-hidden ">Loading...</span> -->
@@ -74,8 +89,11 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 my-3 text-center">
-                <img src="img/6.jpg" class="img-fluid img-thumbnail rounded-3 border border-2 border-danger object-fit-cover visually-hidden" alt=""
-                style="height: 280px; width: 300px;">
+                <figure class="figure">
+                    <img src="img/6.jpg" class="figure-img img-fluid img-thumbnail rounded-3 border border-2 border-danger object-fit-cover visually-hidden" alt=""
+                    style="height: 280px; width: 300px;">
+                    <figcaption class="figure-caption">My Lola 6</figcaption>
+                </figure>    
                 <div class="div_spinner text-center d-flex justify-content-center w-100" style="height: 300px; float: left;">
                     <div class="spinner-border align-self-center" role="status">
                         <!-- <span class="visually-hidden ">Loading...</span> -->
@@ -102,6 +120,16 @@
 
             
         });
+
+        window.onload = function () {
+            const imgA = $(".img-fluid");
+            const spinner =  $(".spinner-border");
+            const divE = $(".div_spinner");
+
+            imgA.removeClass("visually-hidden");
+            spinner.addClass("visually-hidden");
+            divE.css("height", "");
+        }
 
     </script>
 </body>

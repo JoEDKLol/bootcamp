@@ -93,6 +93,16 @@
             divE.eq(carindex).css("height", "");
         });
 
+        window.onload = function () {
+            const carousel = $(".d-block");
+            const spinner =  $(".spinner-border");
+            const divE = $(".div_spinner");
+
+            carousel.removeClass("visually-hidden");
+            spinner.addClass("visually-hidden");
+            divE.css("height", "");
+        }
+
     </script>
     
 </body>

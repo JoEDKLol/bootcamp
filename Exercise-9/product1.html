@@ -29,9 +29,11 @@
     <div class="container-fluid  pt-5" style="background-color: rgb(239, 233, 209);">
         <div class="row mt-5 mb-5" >
             <div class="col-md-4 col-sm-6 my-3 text-center" >
-                <img src="img/airpot.jpg" class="img-fluid img-thumbnail rounded-3 border border-2 border-dark object-fit-cover visually-hidden" alt=""
-                style="height: 280px; width: 300px;">
-
+                <figure class="figure">
+                    <img src="img/airpot.jpg" class="figure-img img-fluid img-thumbnail rounded-3 border border-2 border-dark object-fit-cover visually-hidden" alt=""
+                    style="height: 280px; width: 300px;">
+                    <figcaption class="figure-caption">Img 1</figcaption>
+                </figure>
                 <div class="div_spinner text-center d-flex justify-content-center w-100" style="height: 300px; float: left;">
                     <div class="spinner-border align-self-center" role="status">
                         <!-- <span class="visually-hidden ">Loading...</span> -->
@@ -39,10 +41,13 @@
                 </div>
 
             </div>
+            <!--figure use! -->
             <div class="col-md-4 col-sm-6 my-3 text-center">
-                <img src="img/Controllers.jpg" class="img-fluid img-thumbnail rounded-3 border border-2 border-dark object-fit-cover visually-hidden" alt=""
-                style="height: 280px; width: 300px;">
-
+                <figure class="figure">
+                    <img src="img/Controllers.jpg" class="figure-img img-fluid img-thumbnail rounded-3 border border-2 border-dark object-fit-cover visually-hidden" alt=""
+                    style="height: 280px; width: 300px;">
+                    <figcaption class="figure-caption">Img 2</figcaption>
+                </figure>    
                 <div class="div_spinner text-center d-flex justify-content-center w-100" style="height: 300px; float: left;">
                     <div class="spinner-border align-self-center" role="status">
                         <!-- <span class="visually-hidden ">Loading...</span> -->
@@ -50,9 +55,11 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 my-3 text-center">
-                <img src="img/headset.jpg" class="img-fluid img-thumbnail rounded-3 border border-2 border-dark object-fit-cover visually-hidden" alt=""
-                style="height: 280px; width: 300px;">
-
+                <figure class="figure">
+                    <img src="img/headset.jpg" class="figure-img img-fluid img-thumbnail rounded-3 border border-2 border-dark object-fit-cover visually-hidden" alt=""
+                    style="height: 280px; width: 300px;">
+                    <figcaption class="figure-caption">Img 3</figcaption>
+                </figure>    
                 <div class="div_spinner text-center d-flex justify-content-center w-100" style="height: 300px; float: left;">
                     <div class="spinner-border align-self-center" role="status">
                         <!-- <span class="visually-hidden ">Loading...</span> -->
@@ -60,9 +67,11 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 my-3 text-center" >
-                <img src="img/phone.png" class="img-fluid img-thumbnail rounded-3 border border-2 border-dark object-fit-cover visually-hidden" alt=""
-                style="height: 280px; width: 300px;">
-
+                <figure class="figure">
+                    <img src="img/phone.png" class="figure-img img-fluid img-thumbnail rounded-3 border border-2 border-dark object-fit-cover visually-hidden" alt=""
+                    style="height: 280px; width: 300px;">
+                    <figcaption class="figure-caption">Img 4</figcaption>
+                </figure>    
                 <div class="div_spinner text-center d-flex justify-content-center w-100" style="height: 300px; float: left;">
                     <div class="spinner-border align-self-center" role="status">
                         <!-- <span class="visually-hidden ">Loading...</span> -->
@@ -70,9 +79,11 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 my-3 text-center">
-                <img src="img/smarwatch.png" class="img-fluid img-thumbnail rounded-3 border border-2 border-dark object-fit-cover visually-hidden" alt="" 
-                style="height: 280px; width: 300px;">
-
+                <figure class="figure">
+                    <img src="img/smarwatch.png" class="figure-img img-fluid img-thumbnail rounded-3 border border-2 border-dark object-fit-cover visually-hidden" alt="" 
+                    style="height: 280px; width: 300px;">
+                    <figcaption class="figure-caption">Img 5</figcaption>
+                </figure>    
                 <div class="div_spinner text-center d-flex justify-content-center w-100" style="height: 300px; float: left;">
                     <div class="spinner-border align-self-center" role="status">
                         <!-- <span class="visually-hidden ">Loading...</span> -->
@@ -80,9 +91,11 @@
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 my-3 text-center">
-                <img src="img/switch.jpg" class="img-fluid img-thumbnail rounded-3 border border-2 border-dark object-fit-cover visually-hidden" alt=""
-                style="height: 280px; width: 300px;">
-
+                <figure class="figure">
+                    <img src="img/switch.jpg" class="figure-img img-fluid img-thumbnail rounded-3 border border-2 border-dark object-fit-cover visually-hidden" alt=""
+                    style="height: 280px; width: 300px;">
+                    <figcaption class="figure-caption">Img 6</figcaption>
+                </figure>
                 <div class="div_spinner text-center d-flex justify-content-center w-100" style="height: 300px; float: left;">
                     <div class="spinner-border align-self-center" role="status">
                         <!-- <span class="visually-hidden ">Loading...</span> -->
@@ -109,6 +122,16 @@
 
             
         });
+
+        window.onload = function () {
+            const imgA = $(".img-fluid");
+            const spinner =  $(".spinner-border");
+            const divE = $(".div_spinner");
+
+            imgA.removeClass("visually-hidden");
+            spinner.addClass("visually-hidden");
+            divE.css("height", "");
+        }
 
     </script>
 </body>

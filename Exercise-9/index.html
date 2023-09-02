@@ -52,7 +52,7 @@ html { background-color: rgb(239, 233, 209);}
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand text-light" href="#">
+            <a class="navbar-brand text-light" href="index.html">
                 <img src="img/logo.png " class="img-fluid img-thumbnail me-4" alt="">
                 <!-- <i class="bi-house-fill"> Home</i>     -->
                 
@@ -65,7 +65,8 @@ html { background-color: rgb(239, 233, 209);}
             </div>
             
             <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav me-2 mb-1 ">
+                <ul class="navbar-nav me-auto mb-1 ">
+                <!-- <ul class="navbar-nav me-auto mt-2 mt-lg-0"> -->
                     <li class="nav-item">
                         <a class="nav-link text-nowrap active" href="main.html" target="frame_target">
                             <i id="menuIcon" class="bi-house-fill"> Home</i>
@@ -91,13 +92,16 @@ html { background-color: rgb(239, 233, 209);}
                         </a>
                     </li>
                 </ul>
+                <div class="div mb-1">
+                    <a class=" navbar-brand text-light text-nowrap " href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        <i id="menuIcon" class="bi bi-box-arrow-in-right"> login</i> 
+                        
+                    </a>
+                </div>
+                
+
             </div>
-            <div class="ms-3 mb-1">
-                <a class=" navbar-brand text-light text-nowrap " href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
-                    <i id="menuIcon" class="bi bi-box-arrow-in-right"> login</i> 
-                    
-                </a>
-            </div>
+
             
         </div>
     </nav>
@@ -167,6 +171,7 @@ html { background-color: rgb(239, 233, 209);}
             navlink.eq(navIndex).addClass("active");
 
         });
+
         
     </script>
     
