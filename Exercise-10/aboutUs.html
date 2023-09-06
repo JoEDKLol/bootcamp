@@ -50,7 +50,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link text-nowrap" href="#" id="dropdownId"  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">      
-                            <i id="menuIcon" class="bi bi-list-task font"> Products</i> 
+                            <i id="menuIcon" class="bi bi-list-task"> Products</i> 
                         </a>  
                         <div class="dropdown-menu bg-primary " aria-labelledby="dropdownId">
                             <a id="menu_a" class="dropdown-item text-white" href="product1.html" >Products 1</a>
@@ -60,6 +60,11 @@
                     <li class="nav-item text-nowrap">
                         <a class="nav-link" href="contactUs.html">
                             <i id="menuIcon" class="bi bi-person-vcard-fill me-1"> Contact Us</i>
+                        </a>
+                    </li>
+                    <li class="nav-item text-nowrap">
+                        <a class="nav-link" href="faq.html">
+                            <i id="menuIcon" class="bi bi-question-square me-1"> FAQ</i>
                         </a>
                     </li>
                 </ul>
@@ -94,34 +99,34 @@
 
     </div>
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title w-100 text-center fw-bold fs-1" id="exampleModalLabel">Login</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title w-100 text-center fw-bold fs-1" id="exampleModalLabel">Login</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form id="loginForm">
+            <div class="mb-4">
+                <i class="bi bi-envelope-fill"></i>
+                <input type="email" class="form-control" id="recipient-name" required>Your email
+                <!-- <label for="recipient-name" class="col-form-label">Your email</label> -->
             </div>
-            <div class="modal-body">
-                <form id="loginForm">
-                <div class="mb-4">
-                    <i class="bi bi-envelope-fill"></i>
-                    <input type="email" class="form-control" id="recipient-name" required>Your email
-                    <!-- <label for="recipient-name" class="col-form-label">Your email</label> -->
-                </div>
-                <div class="mb-3">
-                    <i class="bi bi-lock-fill"></i>
-                    <input type="password" class="form-control" id="recipient-name" required>Your password
-                    <!-- <label for="message-text" class="col-form-label mt-0">Your password</label> -->
-                </div>
-                </form>
+            <div class="mb-3">
+                <i class="bi bi-lock-fill"></i>
+                <input type="password" class="form-control" id="recipient-name" required>Your password
+                <!-- <label for="message-text" class="col-form-label mt-0">Your password</label> -->
             </div>
-            <div class="modal-footer">
-                <div class="div w-100 text-center">
-                    <button type="submit" class="btn btn-outline-light text-black-50" form="loginForm">Login</button>
-                </div>
-            </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <div class="div w-100 text-center">
+                <button type="submit" class="btn btn-outline-light text-black-50" form="loginForm">Login</button>
             </div>
         </div>
         </div>
+    </div>
+    </div>
     <div class="fixed-bottom bg-primary">
         <div class="div w-100 text-center">
             <div class="text-center p-3">
