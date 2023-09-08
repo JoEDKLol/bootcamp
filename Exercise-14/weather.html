@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="script.js"></script>
+    <title>Document</title>
+
+    
+
+</head>
+<body>
+    <div class="contanier pt-5 px-5" > 
+        <div class="row">
+            <div class="d-flex col-10">
+                <input type="text" class="form-control " id="cityName" placeholder="Enter City Name" list="datalistOptions" oninput="checkVal()" >
+                <datalist id="datalistOptions">
+
+                </datalist>
+                <button type="button" class="btn btn-outline-primary btn-sm ms-2" onclick="clickHandler()">search</button>
+                <button type="button" class="btn btn-outline-primary btn-sm ms-2" onclick="clearHtml()">clear</button>
+            </div>    
+
+            <P id="validation" class="mt-1 text-danger w-100 d-none">Please enter city name</P>
+            <div id="hDiv" class="div mt-5"></div>
+        </div>
+        
+    </div>
+    <div class="contanier px-5" >
+
+        <div id="res" class="row">
+            
+
+        
+        </div>
+        
+
+        
+
+    </div>
+</body>
+</html>
