@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="divClock" class="contanier"></div>
+    <script>
+        let root = ReactDOM.createRoot(document.getElementById("divClock"));
+        let fontsize = 6;
+        let Cfontsize = "fs-1";
+
+        let bgColor = "";
+        let fontColor = "";
+        
+
+
+        let renderThis = () => {
+
+            let date = new Date();
+            let oYear = date.getFullYear();
+            let oMonth = date.getMonth() + 1;
+            let oDate = date.getDate();
+            let oDay = date.getDay();
+            let oHours = date.getHours();
+            let oMinutes = date.getMinutes();
+            let oSeconds = date.getSeconds();
+
+            let sDay = "";
+            let mA = "AM";
+
+
+            
+            if(oHours > 12){
+                oHours = oHours - 12;
+
+
+                mA = "PM";
+            }
+
+            if(oHours < 10 ){
+                oHours = "0"+oHours;
+            }
+
+            if(oSeconds < 10){
+                oSeconds = "0"+oSeconds;
+            }
+
+            let cTime = oHours + ":" + oMinutes + ":" + oSeconds;
+            //let cTime = oHours + ":" + oMinutes;
+            
+            switch(oDay){
+               case 0: sDay = "Sun"; break;
+               case 1: sDay = "Mon"; break;
+               case 2: sDay = "Tue"; break;
+               case 3: sDay = "Wed"; break;
+               case 4: sDay = "Thu"; break;
+               case 5: sDay = "Fri"; break;
+               case 6: sDay = "Sat"; break;
+            }
+
+            
+
+            let cYMD = oYear + "-" + oMonth + "-" + oDate + " " + sDay;
+            let MyReactCompMenu = React.createElement("div",{id:"div1",key:"1", className:"mt-3"},
+                React.createElement("button",
+                    {className:"btn btn-outline-primary btn-sm mx-3",
+                        
+                        onClick : () => {
+                            fontsize++;
+                            //fondsize = "fs-1";
+                            if(fontsize > 6){
+                                fontsize = 1;
+                            }
+
+                            switch(fontsize){
+                                case 1: Cfontsize = "fs-6"; break;
+                                case 2: Cfontsize = "fs-5"; break;
+                                case 3: Cfontsize = "fs-4"; break;
+                                case 4: Cfontsize = "fs-3"; break;
+                                case 5: Cfontsize = "fs-2"; break;
+                                case 6: Cfontsize = "fs-1"; break;
+                            }
+
+                            renderThis();
+                            
+                        }
+                    },"size")
+                , React.createElement("div",{className:"form-check form-check-inline"},
+                    React.createElement("input", 
+                        {className:"form-check-input"
+                            , type:"radio"
+                            , id:"inlineRadio1"
+                            , name:"inlineRadioOptions"
+                            , value:"option1"
+                            , onChange : () => {bgColor = "bg-primary"; fontColor="";   renderThis();}
+                        }, null)
+                    , React.createElement("label", 
+                        {className:"form-check-label"
+                            , type:"radio"
+                            , htmlFor:"inlineRadio1"
+                        }, "primary")    
+                        
+                )
+                , React.createElement("div",{className:"form-check form-check-inline"},
+                    React.createElement("input", 
+                        {className:"form-check-input"
+                            , type:"radio"
+                            , id:"inlineRadio2"
+                            , name:"inlineRadioOptions"
+                            , value:"option2"
+                            , onChange : () => {bgColor = "bg-secondary"; fontColor="";  renderThis();}
+                        }, null)
+                    , React.createElement("label", 
+                        {className:"form-check-label"
+                            , type:"radio"
+                            , htmlFor:"inlineRadio2"
+                        }, "secondary")    
+                        
+                )
+                , React.createElement("div",{className:"form-check form-check-inline"},
+                    React.createElement("input", 
+                        {className:"form-check-input"
+                            , type:"radio"
+                            , id:"inlineRadio3"
+                            , name:"inlineRadioOptions"
+                            , value:"option3"
+                            , onChange : () => {bgColor = "bg-success"; fontColor="";  renderThis();}
+                        }, null)
+                    , React.createElement("label", 
+                        {className:"form-check-label"
+                            , type:"radio"
+                            , htmlFor:"inlineRadio3"
+                        }, "success")    
+                        
+                )
+                , React.createElement("div",{className:"form-check form-check-inline"},
+                    React.createElement("input", 
+                        {className:"form-check-input"
+                            , type:"radio"
+                            , id:"inlineRadio4"
+                            , name:"inlineRadioOptions"
+                            , value:"option4"
+                            , onChange : () => {bgColor = "bg-danger"; fontColor="";  renderThis();}
+                        }, null)
+                    , React.createElement("label", 
+                        {className:"form-check-label"
+                            , type:"radio"
+                            , htmlFor:"inlineRadio4"
+                        }, "danger")    
+                        
+                )
+                , React.createElement("div",{className:"form-check form-check-inline"},
+                    React.createElement("input", 
+                        {className:"form-check-input"
+                            , type:"radio"
+                            , id:"inlineRadio5"
+                            , name:"inlineRadioOptions"
+                            , value:"option5"
+                            , onChange : () => {bgColor = "bg-warning";fontColor="";   renderThis();}
+                        }, null)
+                    , React.createElement("label", 
+                        {className:"form-check-label"
+                            , type:"radio"
+                            , htmlFor:"inlineRadio5"
+                        }, "warning")    
+                        
+                )
+                , React.createElement("div",{className:"form-check form-check-inline"},
+                    React.createElement("input", 
+                        {className:"form-check-input"
+                            , type:"radio"
+                            , id:"inlineRadio6"
+                            , name:"inlineRadioOptions"
+                            , value:"option6"
+                            , onChange : () => {bgColor = "bg-info"; fontColor=""; renderThis();}
+                        }, null)
+                    , React.createElement("label", 
+                        {className:"form-check-label"
+                            , type:"radio"
+                            , htmlFor:"inlineRadio6"
+                        }, "info")    
+                        
+                )
+                , React.createElement("div",{className:"form-check form-check-inline"},
+                    React.createElement("input", 
+                        {className:"form-check-input"
+                            , type:"radio"
+                            , id:"inlineRadio7"
+                            , name:"inlineRadioOptions"
+                            , value:"option7"
+                            , onChange : () => {bgColor = "bg-light"; fontColor=""; renderThis();}
+                        }, null)
+                    , React.createElement("label", 
+                        {className:"form-check-label"
+                            , type:"radio"
+                            , htmlFor:"inlineRadio7"
+                        }, "light")    
+                        
+                )
+                , React.createElement("div",{className:"form-check form-check-inline"},
+                    React.createElement("input", 
+                        {className:"form-check-input"
+                            , type:"radio"
+                            , id:"inlineRadio8"
+                            , name:"inlineRadioOptions"
+                            , value:"option8"
+                            , onChange : () => {bgColor = "bg-dark"; fontColor="text-white"; renderThis();}
+                        }, null)
+                    , React.createElement("label", 
+                        {className:"form-check-label"
+                            , type:"radio"
+                            , htmlFor:"inlineRadio8"
+                        }, "dark")    
+                        
+                )
+                // , React.createElement("div",{className:"form-check form-check-inline"},
+                //     React.createElement("input", 
+                //         {className:"form-check-input"
+                //             , type:"radio"
+                //             , id:"inlineRadio9"
+                //             , name:"inlineRadioOptions"
+                //             , value:"option9"
+                //             , onChange : () => {bgColor = "bg-white"; fontColor=""; renderThis();}
+                //         }, null)
+                //     , React.createElement("label", 
+                //         {className:"form-check-label"
+                //             , type:"radio"
+                //             , htmlFor:"inlineRadio9"
+                //         }, "white")    
+                        
+                // )
+                , React.createElement("div",{className:"form-check form-check-inline"},
+                    React.createElement("input", 
+                        {className:"form-check-input"
+                            , type:"radio"
+                            , id:"inlineRadio10"
+                            , name:"inlineRadioOptions"
+                            , value:"option10"
+                            , onChange : () => {bgColor = ""; fontColor=""; renderThis();}
+                        }, null)
+                    , React.createElement("label", 
+                        {className:"form-check-label"
+                            , type:"radio"
+                            , htmlFor:"inlineRadio10"
+                        }, "default")    
+                        
+                )
+            )
+            
+            let MyReactCompHr = React.createElement("div",{className:" ms-3",id:"div2",key:"2"},
+                
+                React.createElement("hr",{
+                    
+                })
+                
+            );
+            
+            
+            let MyReactComp = React.createElement("div",{className:bgColor+" ms-3 text-center w-50 border border-2 border-dark rounded p-3",id:"div2",key:"2"},
+                
+                 
+                React.createElement("span",{id:"time",className:Cfontsize + " " + fontColor},cTime)
+
+                
+                //, React.createElement("span",{id:"MA", style:{color:""} },oSeconds)
+                , React.createElement("span",{id:"MA", style:{color:""}, className:fontColor },mA)
+                , React.createElement("br",{})
+                , React.createElement("span",{className:fontColor},cYMD)
+                
+            );
+            //root.render([MyReactCompMenu,MyReactComp]);
+            root.render([MyReactCompMenu,MyReactCompHr,MyReactComp]);
+        }
+
+
+        setInterval(renderThis,1000);
+
+
+
+
+    </script>
+</body>
+</html>
