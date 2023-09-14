@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Greeting</title>
+</head>
+<body>
+    <div id="root"></div>
+
+
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>    
+<script type="text/babel">
+
+    class Cgreeting extends React.Component{
+        render(){
+            return <h1>Hello</h1>
+        }
+    }
+
+    let Fgreeting = () => {
+        return (<h1>Hello</h1>);
+    }
+
+    let GreetingHtml = (props) => {
+
+        const [content, setContent] = React.useState();
+
+
+        return(
+            retHtml_input(props)
+            
+        );
+    }
+
+    let retHtml_input = (props) => {
+        
+        let reHtml = [];
+        // <input type="radio" name="inlineRadioOptions"/>
+        for(let i=0; i<12; i++){
+            //reHtml += reHtml;
+            reHtml.push(
+
+                    <div key={i} className=" col-md-1 col-sm-2 col-4 text-center mt-1 "      
+                        onClick={props.clickHandler}>
+                        <img src={"img/"+props.flags[i]} alt={props.flags[i]} 
+                        className="img-thumbnail rounded-1 border border-1 border-dark"
+                        //style={{height:"10%px"}}
+                        />
+                    </div>
+
+            );
+        }
+
+        return <div className="p-3">
+                    <div key="div2" className="row">
+                        {reHtml}
+                    </div><hr/>
+                </div>;
+        }
+
+    
+
+    let parentClickHandler = (event) => {
+
+        let greetings = event.target.getAttribute('alt')
+        let sounds = "";
+
+        switch(event.target.getAttribute('alt')){
+            case "kr.svg" : greetings = "안녕하세요 (Ann-Yong-Ha-Sey-Oh)"; sounds="kr.mp3"; break;
+            case "mx.svg" : greetings = "Hola"; sounds="mx.mp3"; break;
+            case "us.svg" : greetings = "Hello"; sounds="us.mp3"; break;
+            case "in.svg" : greetings = "नमसते (Namaste)"; sounds="in.mp3"; break;
+            case "cn.svg" : greetings = "您好 (nínhǎo)"; sounds="cn.mp3"; break;
+            case "de.svg" : greetings = "Hallo"; sounds="de.mp3"; break;
+            case "fr.svg" : greetings = "Bonjour"; sounds="fr.mp3"; break;
+            case "vn.svg" : greetings = "Xin chào (Sin Chao)"; sounds="vn.mp3"; break;
+            case "it.svg" : greetings = "Buongiorno"; sounds="it.mp3"; break;
+            case "tr.svg" : greetings = "Merhaba"; sounds="tr.mp3"; break;
+            case "ru.svg" : greetings = "здраствуйте"; sounds="ru.mp3"; break;
+            case "jp.svg" : greetings = "おはよう (ohayō)"; sounds="jp.mp3"; break;
+            default: greetings = "Click flags"; sounds=""; 
+        }
+;
+        root.render([<GreetingHtml flags={flags} clickHandler={parentClickHandler}/>, <Greeting greeting={greetings} sounds={sounds}/>]);
+    }
+
+    let Greeting = ({greeting,sounds}) => {
+
+        //const [ test, setFlag ] = React.useState('');
+
+        return <div className="bg-dark  mx-3 p-2 border border-2 rounded" >
+                    <div className="mb-2"><span className="text-white p-2 fs-5">{greeting}</span></div>
+                    <div><audio id="track1" src={"audio/"+sounds} controls="1"></audio></div>
+                    
+                </div>
+    }
+
+    let flags = [
+        "kr.svg", "mx.svg", "us.svg", "in.svg", "cn.svg"
+        , "de.svg", "fr.svg", "vn.svg", "it.svg", "tr.svg"
+        , "ru.svg", "jp.svg" 
+
+    ];
+
+
+    let root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render([<GreetingHtml flags={flags} clickHandler={parentClickHandler}/>, <Greeting greeting="Click flags" sounds=""/>]);
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
