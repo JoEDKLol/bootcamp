@@ -16,24 +16,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>    
 <script type="text/babel">
 
-    class Cgreeting extends React.Component{
-        render(){
-            return <h1>Hello</h1>
-        }
-    }
-
-    let Fgreeting = () => {
-        return (<h1>Hello</h1>);
-    }
-
     let GreetingHtml = (props) => {
 
         const [content, setContent] = React.useState();
-
-
         return(
             retHtml_input(props)
-            
         );
     }
 
@@ -61,7 +48,7 @@
                         {reHtml}
                     </div><hr/>
                 </div>;
-        }
+    }
 
     
 
@@ -85,16 +72,21 @@
             case "jp.svg" : greetings = "おはよう (ohayō)"; sounds="jp.mp3"; break;
             default: greetings = "Click flags"; sounds=""; 
         }
-;
-        root.render([<GreetingHtml flags={flags} clickHandler={parentClickHandler}/>, <Greeting greeting={greetings} sounds={sounds}/>]);
+
+        root.render([<GreetingHtml flags={flags} clickHandler={parentClickHandler}/>, <Greeting greeting={greetings} sounds={sounds} name={inputData} changeHandler={parentChangeHandler}/>]);
     }
 
-    let Greeting = ({greeting,sounds}) => {
+    let inputData = "";
+    let Greeting = ({greeting,sounds,name,changeHandler}) => {
 
         //const [ test, setFlag ] = React.useState('');
 
         return <div className="bg-dark  mx-3 p-2 border border-2 rounded" >
-                    <div className="mb-2"><span className="text-white p-2 fs-5">{greeting}</span></div>
+                    <input className="mb-2" 
+                    onChange={changeHandler}
+                    />
+                    <hr className="text-white my-0"/>
+                    <div className="mb-2"><span className="text-white p-2 fs-5">{greeting} {name}</span></div>
                     <div><audio id="track1" src={"audio/"+sounds} controls="1"></audio></div>
                     
                 </div>
@@ -104,12 +96,15 @@
         "kr.svg", "mx.svg", "us.svg", "in.svg", "cn.svg"
         , "de.svg", "fr.svg", "vn.svg", "it.svg", "tr.svg"
         , "ru.svg", "jp.svg" 
-
     ];
 
+    let parentChangeHandler = (event) => {
+        //alert(event.target.value);
+        inputData = event.target.value;
+    }
 
     let root = ReactDOM.createRoot(document.getElementById("root"));
-    root.render([<GreetingHtml flags={flags} clickHandler={parentClickHandler}/>, <Greeting greeting="Click flags" sounds=""/>]);
+    root.render([<GreetingHtml flags={flags} clickHandler={parentClickHandler}/>, <Greeting greeting="Click flags" sounds="" name="" changeHandler={parentChangeHandler}/>]);
 
 
 
