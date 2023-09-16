@@ -73,7 +73,7 @@
             default: greetings = "Click flags"; sounds=""; 
         }
 
-        root.render([<GreetingHtml flags={flags} clickHandler={parentClickHandler}/>, <Greeting greeting={greetings} sounds={sounds} name={inputData}/>]);
+        root.render([<GreetingHtml flags={flags} clickHandler={parentClickHandler}/>, <Greeting greeting={greetings} sounds={sounds} name={inputData} changeHandler={parentChangeHandler}/>]);
     }
 
     let inputData = "";
@@ -82,6 +82,10 @@
         //const [ test, setFlag ] = React.useState('');
 
         return <div className="bg-dark  mx-3 p-2 border border-2 rounded" >
+                    <input className="mb-2" 
+                    onChange={changeHandler}
+                    />
+                    <hr className="text-white my-0"/>
                     <div className="mb-2"><span className="text-white p-2 fs-5">{greeting} {name}</span></div>
                     <div><audio id="track1" src={"audio/"+sounds} controls="1"></audio></div>
                     
@@ -94,8 +98,13 @@
         , "ru.svg", "jp.svg" 
     ];
 
+    let parentChangeHandler = (event) => {
+        //alert(event.target.value);
+        inputData = event.target.value;
+    }
+
     let root = ReactDOM.createRoot(document.getElementById("root"));
-    root.render([<GreetingHtml flags={flags} clickHandler={parentClickHandler}/>, <Greeting greeting="Click flags" sounds="" name=""/>]);
+    root.render([<GreetingHtml flags={flags} clickHandler={parentClickHandler}/>, <Greeting greeting="Click flags" sounds="" name="" changeHandler={parentChangeHandler}/>]);
 
 
 
