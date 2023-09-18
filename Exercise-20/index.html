@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+
+
+
+
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>    
+<script type="text/babel">
+
+    let MyFaq = (props) => {
+
+        // let test = [];
+        // for ( let i = 0; i < 3; i++) 
+        // {
+        //     test.push(<span>test</span>);
+        // }
+
+        //alert(props.data[0].F);
+
+        return (
+
+
+        <div className="container-fluid  pt-5">
+            <p className="mt-5 fs-1 fw-bold">FAQ</p>
+            <div className="border border-dark" >         
+                {
+                    props.data.map(
+                        function(a){
+                            return (
+                                <div className="accordion accordion-flush " id="accordionFlushExample">
+                                    <div className="accordion-item border-bottom border-2">
+                                        <h2 className="accordion-header" id={a.ID1}>
+                                            <button className="w-100 collapsed bg-light text-start pt-1 pb-3 ps-3 border-0 " type="button" data-bs-toggle="collapse" data-bs-target={"#"+a.ID2} aria-expanded="false" aria-controls={a.ID2}>
+                                                <span className="text-primary fs-6">{a.F}</span>
+                                            </button>
+                                        </h2>
+                                        <div id={a.ID2} className="accordion-collapse collapse border-top" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                            <div className="accordion-body">{a.Q}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    )
+                }
+            </div>    
+        </div>    
+
+        );
+
+    }
+
+    let data = [
+
+        {
+            F:"01. I don't remember my password?"
+            , Q:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores nihil, minus repellendus cumque quis dolore et assumenda, sit nostrum dolorum delectus, totam culpa quasi. Nisi aliquam quia temporibus eius suscipit."
+            , ID1:"flush-headingOne"
+            , ID2:"flush-collapseOne"
+        },{
+            F:"02. How can I create an account at your site?"
+            , Q:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum, blanditiis numquam deserunt ex quis praesentium a maiores optio cum repudiandae ducimus porro dolorum qui asperiores repellat fuga recusandae nobis ratione!"
+            , ID1:"flush-headingTwo"
+            , ID2:"flush-collapseTwo"
+        },{
+            F:"03. What are your delivery hours?"
+            , Q:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quisquam animi est debitis dignissimos necessitatibus laudantium tempore illo aliquid possimus fuga ad commodi saepe iure, eum harum voluptate consectetur in!"
+            , ID1:"flush-headingThree"
+            , ID2:"flush-collapseThree"
+        },{
+            F:"04. How much time it takes to deliver the order ?"
+            , Q:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, sunt, qui exercitationem ipsa modi eius magni ullam accusantium enim eaque debitis quo optio veritatis dolores? Neque eius aliquid consectetur provident!"
+            , ID1:"flush-headingFour"
+            , ID2:"flush-collapseFour"
+        },{
+            F:"05. How do I know status of my order?"
+            , Q:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam numquam quae autem quia. Corporis maxime inventore, placeat quasi nesciunt illo aut maiores rerum ipsum vitae perspiciatis quis odit animi adipisci."
+            , ID1:"flush-headingFive"
+            , ID2:"flush-collapseFive"
+        }
+
+
+    ];
+    
+    let root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<MyFaq data={data}/>);
+
+</script>    
+</body>
+</html>
