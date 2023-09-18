@@ -21,12 +21,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>    
 <script type="text/babel">
 
-    let MyCounter = () => {
+    let MyCounter = (props) => {
 
         let{useState} = React;
-        let [count, setCount] = useState(0);
-        let [divCnt, setDivCnt] = useState([]);
-        let [maxCnt, setMaxCnt] = useState(27);
+        let [count, setCount] = useState(props.sNum);
+        let [divCnt, setDivCnt] = useState(props.sDiv);
+        let [maxCnt, setMaxCnt] = useState(props.eNum);
+        let [minCnt, setMinCnt] = useState(props.sNum);
+
         
         let clickHandlerPlus = () => {
             count++;
@@ -36,7 +38,6 @@
             }
 
             setCount(count);
-
             if(divCnt.length < maxCnt){
                 divCnt.push(<div className="border border-1 border-warning bg-warning" style={{width:'10px', height:'10px'}}></div>);
                 setDivCnt(divCnt);
@@ -47,21 +48,40 @@
         let clickHandlerMinus = () => {
             count--;
 
-            if(count<0){
-                count = 0;
+            if(count<minCnt){
+                count = minCnt;
             }
 
             setCount(count);
 
-            divCnt.pop();
+            if(divCnt.length > minCnt){
+                divCnt.pop();
+            }
+
             setDivCnt(divCnt);
         }
 
        
-        let onChangeHandler = (event) => {
+        let onChangeHandlerMax = (event) => {
             setMaxCnt(event.target.value)
-            setCount(0);
             setDivCnt([]);
+            divCnt=[];
+            for(let i=0; i<minCnt; i++){
+                divCnt.push(<div className="border border-1 border-warning bg-warning" style={{width:'10px', height:'10px'}}></div>);
+            }
+            setCount(minCnt);
+            setDivCnt(divCnt);
+        }
+
+        let onChangeHandlerMin = (event) => {
+            setMinCnt(event.target.value)
+            setDivCnt([]);
+            divCnt=[];
+            for(let i=0; i<event.target.value; i++){
+                divCnt.push(<div className="border border-1 border-warning bg-warning" style={{width:'10px', height:'10px'}}></div>);
+            }
+            setCount(event.target.value);
+            setDivCnt(divCnt);
         }
 
         return(
@@ -74,14 +94,28 @@
                 <div style={{}}>
                     <button onClick={clickHandlerPlus} type="button" className="btn btn-outline-dark btn-sm mx-3 mb-1">increase</button>
                     <button onClick={clickHandlerMinus} type="button" className="btn btn-outline-dark btn-sm mb-1">decrease</button>
-                    <span className="ms-3 me-2">maxCnt</span><input className="mt-1" type="number" style={{width:'70px', textAlign:"right"}} onChange={onChangeHandler} defaultValue={maxCnt}/>
+                    <span className="ms-3 me-2">min</span><input className="mt-1" type="number" style={{width:'60px', textAlign:"right"}} onChange={onChangeHandlerMin} defaultValue={minCnt}/>
+                    <span className="ms-3 me-2">max</span><input className="mt-1" type="number" style={{width:'60px', textAlign:"right"}} onChange={onChangeHandlerMax} defaultValue={maxCnt}/>
                     </div>
             </div>
         );
     }
 
+    let sNum = 5;
+    let eNum = 30;
+    let sDiv=[];
+    
+    let initCom = () => {
+        for(let i=0; i<sNum; i++){
+            sDiv.push(<div className="border border-1 border-warning bg-warning" style={{width:'10px', height:'10px'}}></div>);
+            
+        }
+    }
+
+    initCom();
+
     let root = ReactDOM.createRoot(document.getElementById("root"));
-    root.render(<MyCounter/>);
+    root.render(<MyCounter sNum={5} sDiv={sDiv} eNum={eNum}/>);
 
 
 </script>
