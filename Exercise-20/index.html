@@ -36,11 +36,12 @@
         <div className="container-fluid  pt-5">
             <p className="mt-5 fs-1 fw-bold">FAQ</p>
             <div className="border border-dark" >         
+                <div className="accordion accordion-flush " id="accordionFlushExample">
                 {
                     props.data.map(
                         function(a){
                             return (
-                                <div className="accordion accordion-flush " id="accordionFlushExample">
+                               
                                     <div className="accordion-item border-bottom border-2">
                                         <h2 className="accordion-header" id={a.ID1}>
                                             <button className="w-100 collapsed bg-light text-start pt-1 pb-3 ps-3 border-0 " type="button" data-bs-toggle="collapse" data-bs-target={"#"+a.ID2} aria-expanded="false" aria-controls={a.ID2}>
@@ -51,11 +52,12 @@
                                             <div className="accordion-body">{a.Q}</div>
                                         </div>
                                     </div>
-                                </div>
+                                
                             )
                         }
                     )
                 }
+                </div>
             </div>    
         </div>    
 
