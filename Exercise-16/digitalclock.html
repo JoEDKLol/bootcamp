@@ -10,6 +10,7 @@
 </head>
 <body>
     <div id="divClock" class="contanier"></div>
+    <div id="innerdiv" class="contanier"></div>
     <script>
         let root = ReactDOM.createRoot(document.getElementById("divClock"));
         let fontsize = 6;
@@ -249,18 +250,34 @@
             
             let MyReactComp = React.createElement("div",{className:bgColor+" ms-3 text-center w-50 border border-2 border-dark rounded p-3",id:"div2",key:"3"},
                 
-                 
-                React.createElement("span",{id:"time",className:Cfontsize + " " + fontColor},cTime)
+                React.createElement("h2",{className:fontColor},"React")
+                , React.createElement("span",{id:"time",className:Cfontsize + " " + fontColor},cTime)
 
                 
                 //, React.createElement("span",{id:"MA", style:{color:""} },oSeconds)
                 , React.createElement("span",{id:"MA", style:{color:""}, className:fontColor },mA)
                 , React.createElement("br",{})
                 , React.createElement("span",{className:fontColor},cYMD)
-                
+                , React.createElement("br",{})
+                , React.createElement("input", {className:"mt-2"}, null),
             );
             //root.render([MyReactCompMenu,MyReactComp]);
             root.render([MyReactCompMenu,MyReactCompHr,MyReactComp]);
+
+            let str =   `<div class='${bgColor} ms-3 text-center w-50 border border-2 border-dark rounded p-3 mt-3'>
+                            <h2 class=${fontColor}>Vanilla JS</h1>
+                            <span class='${Cfontsize} ${fontColor}'>${cTime}</span>
+                            <span class=${fontColor}>${mA}</span>
+                            <br>
+                            <span class=${fontColor}>${cYMD}</span>
+                            <br><input class="mt-2">
+                        </div>
+                
+                `;
+            document.getElementById("innerdiv").innerHTML = str;
+            
+
+
         }
 
 
