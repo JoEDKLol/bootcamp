@@ -1,0 +1,18 @@
+.div_1{
+    text-align: right;
+}
+.menuIcon{
+font-style: normal;
+}
+.menu_a:hover{
+    background-color: rgb(58, 145, 239);
+}
+#menuIcon{
+font-style: normal;
+}
+#menu_a:hover{
+    background-color: rgb(58, 145, 239);
+}
+.menu_a_bg{
+    background-color: rgb(58, 145, 239);
+}
