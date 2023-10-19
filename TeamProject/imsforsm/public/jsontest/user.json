@@ -1,0 +1,103 @@
+[
+  {
+    "_id": "652f73dfbb5be4ed4b9588b0",
+    "user_name": "DaeHee",
+    "password": 1,
+    "login_attempts_cnt": 0,
+    "email": "wibterflower@gmail.com",
+    "role": "administrator",
+    "companies_manager": [
+      {
+        "company_id": "65266b55ccc5e2fe0e1063bd",
+        "company_name": "comany_a"
+      },
+      {
+        "company_id": "65266b55ccc5e2fe0e1063be",
+        "company_name": "comany_b"
+      }
+
+    ],
+    "companies_operator": [],
+    "account_lock": "n",
+    "delete_yn": "n",
+    "regDate": "2023-10-11T09:26:15.160Z",
+    "regUser": "DaeHee",
+    "updDate": "2023-10-11T09:26:15.160Z",
+    "updUser": "DaeHee"
+  },
+  {
+    "_id": "652f73dfbb5be4ed4b9588b1",
+    "user_name": "AAA",
+    "password": 1,
+    "login_attempts_cnt": 5,
+    "email": "AAA@AAA.com",
+    "role": "user",
+    "companies_manager": [],
+    "companies_operator": [
+      {
+        "company_id": "65266b55ccc5e2fe0e1063bd",
+        "company_name": "comany_a"
+      }
+
+    ],
+    "account_lock": "n",
+    "delete_yn": "n",
+    "regDate": "2023-10-11T09:26:15.160Z",
+    "regUser": "AAA",
+    "updDate": "2023-10-11T09:26:15.160Z",
+    "updUser": "AAA"
+  },
+  {
+    "_id": "652f73dfbb5be4ed4b9588b2",
+    "user_name": "BBB",
+    "password": 1,
+    "login_attempts_cnt": 0,
+    "email": "BBB@BBB.com",
+    "role": "user",
+    "companies_manager": [],
+    "companies_operator": [
+      {
+        "company_id": "65266b55ccc5e2fe0e1063bd",
+        "company_name": "comany_a"
+      }
+    ],
+    "account_lock": "n",
+    "delete_yn": "n",
+    "regDate": "2023-10-11T09:26:15.160Z",
+    "regUser": "AAA",
+    "updDate": "2023-10-11T09:26:15.160Z",
+    "updUser": "AAA"
+  },
+  {
+    "_id": "652f73dfbb5be4ed4b9588b3",
+    "user_name": "CCC",
+    "password": 1,
+    "login_attempts_cnt": 0,
+    "email": "CCC@CCC.com",
+    "role": "user",
+    "companies_manager": [],
+    "companies_operator": [],
+    "account_lock": "n",
+    "delete_yn": "n",
+    "regDate": "2023-10-11T09:26:15.160Z",
+    "regUser": "CCC",
+    "updDate": "2023-10-11T09:26:15.160Z",
+    "updUser": "CCC"
+  },
+  {
+    "_id": "652f73dfbb5be4ed4b9588b4",
+    "user_name": "DDD",
+    "password": 1,
+    "login_attempts_cnt": 5,
+    "email": "DDD@DDD.com",
+    "role": "user",
+    "companies_manager": [],
+    "companies_operator": [],
+    "account_lock": "n",
+    "delete_yn": "n",
+    "regDate": "2023-10-11T09:26:15.160Z",
+    "regUser": "DDD",
+    "updDate": "2023-10-11T09:26:15.160Z",
+    "updUser": "DDD"
+  }
+]
