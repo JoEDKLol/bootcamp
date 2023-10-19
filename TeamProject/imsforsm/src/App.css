@@ -32,7 +32,22 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.content-box {
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px #B9B9B9;
+  padding: 5px;
+  width: 80%;
+  background-color: white;
+}
+
+.wrapper{
+  min-height: 100%;
+  position: relative;
+  /* padding-bottom: 50px; */
 }

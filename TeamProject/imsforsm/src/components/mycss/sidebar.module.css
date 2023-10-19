@@ -1,0 +1,15 @@
+.sideBar{
+    width: 180px;
+    height: 48.2em;
+    background-color: #7E9085; /* Set the background color*/
+    border-radius: 10px;
+    /* padding-bottom: 150px; */
+
+}
+
+.sideBarLink {
+    color: white;
+    font-weight: bold;
+    font-size: 1.0rem;
+    text-decoration-line: none;
+}
